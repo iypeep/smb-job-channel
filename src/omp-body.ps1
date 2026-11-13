@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+# SPDX-License-Identifier: AGPL-3.0-or-later
 <#
   omp-body.ps1  v2.0.0  -  the machine end of a file-hub remote-control channel.
 

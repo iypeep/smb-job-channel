@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// SPDX-License-Identifier: AGPL-3.0-or-later
 // omp-watch.cs - the smb-job-channel watchdog, without Windows PowerShell.
 //
 // Why this exists: the 1.0.0 watchdog published its state with a hidden

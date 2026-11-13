@@ -1,8 +1,15 @@
 smb-job-channel
 Copyright 2026 Benedict Tang
 
-License: PolyForm Noncommercial License 1.0.0 (see LICENSE).
-Free for noncommercial use. Commercial use requires a separate written license from the
-copyright holder: 401219981@qq.com
+This project is dual-licensed:
 
-No third-party source code is included. SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+1. GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later) — see LICENSE.
+   Free for any use, including commercial, provided you comply with the AGPL: modified
+   versions must be licensed under the AGPL, and if you make a modified version available
+   to users over a network, you must offer them its complete corresponding source.
+2. A commercial license from the copyright holder — for closed-source use, internal
+   commercial deployment without AGPL obligations, or support. Contact: 401219981@qq.com
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+
+No third-party source code is included.

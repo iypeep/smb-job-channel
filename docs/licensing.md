@@ -1,22 +1,18 @@
-<!-- SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0 -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # Licensing
 
-This project is **source-available**, not OSI open source.
+**Dual-licensed: AGPL-3.0-or-later, or a commercial license.**
 
-| Use | Allowed? |
+| Use | Which license |
 |---|---|
-| Personal study, hobby projects, research, teaching | yes, free |
-| Internal noncommercial evaluation | yes, free |
-| Use in a commercial product or commercial internal operations | **requires a commercial license** |
-| Offering it as a paid service | **requires a commercial license** |
-| Redistribution (modified or not) | only under the same license, noncommercial |
+| Personal, research, teaching, hobby | AGPL-3.0-or-later, free |
+| Commercial use with source available (your modifications published under AGPL) | AGPL-3.0-or-later, free |
+| Closed-source commercial use / internal deployment without AGPL obligations / support | **commercial license** (401219981@qq.com) |
+| Offering it as a service where users interact over a network | either comply with AGPL §13 (offer complete source to those users) or take the commercial license |
 
-Licensed under **PolyForm Noncommercial License 1.0.0** (full text in `LICENSE`, canonical copy at
-<https://polyformproject.org/licenses/noncommercial/1.0.0/>). Commercial licensing:
-401219981@qq.com.
+The AGPL is a real open source license (OSI/FSF approved): nothing here forbids commercial
+use. What it does forbid is taking the code closed. If that is a problem for your product,
+the commercial license is the way to solve it.
 
-Every source file carries the identifier so the terms travel with the code:
-
-```
-# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
-```
+Full text: `LICENSE` (canonical: <https://www.gnu.org/licenses/agpl-3.0.html>).
+Every source file carries `SPDX-License-Identifier: AGPL-3.0-or-later`.

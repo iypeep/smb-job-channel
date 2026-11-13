@@ -1,4 +1,4 @@
-<!-- SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0 -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # smb-job-channel
 
 A small, auditable **job channel that uses an SMB share as its control plane**: the controller
@@ -56,6 +56,11 @@ python src/ompremote.py selftest     # fake hub: run/exit/timeout/cwd/fetch/push
 
 ## License
 
-**PolyForm Noncommercial License 1.0.0** — free for noncommercial use; **commercial use requires a
-separate license** from the copyright holder (401219981@qq.com). See [LICENSE](LICENSE) and
-[docs/licensing.md](docs/licensing.md).
+**Dual-licensed: AGPL-3.0-or-later, or a commercial license.**
+
+- AGPL-3.0-or-later (default, in `LICENSE`): free for any use including commercial, provided
+  you keep derivatives open — including offering source to users of a network service.
+- Commercial license (401219981@qq.com): for closed-source use, internal deployment without
+  AGPL obligations, or support.
+
+See [LICENSE](LICENSE), [NOTICE](NOTICE) and [docs/licensing.md](docs/licensing.md).
