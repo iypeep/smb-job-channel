@@ -36,7 +36,14 @@ import tempfile
 import time
 from datetime import datetime
 
-DEFAULT_HUB = r"\\fileserver\share\_omp"
+# There is deliberately NO default share path in this repository: it is environment specific
+# and publishing it would leak an internal path. The operator must supply it:
+#   python src/ompremote.py --hub '\\server\share\_omp' machines
+#   set OMP_REMOTE_HUB=\\server\share\_omp          (Windows)
+#   export OMP_REMOTE_HUB=\\server\share\_omp       (bash)
+# An agent should ASK THE USER for this path (the folder the machines can already write),
+# never guess or reuse one found in a log.
+DEFAULT_HUB = ""
 
 # Mirrors of the same logical channel. Only one file server is reachable from the
 # production VLANs, so redundancy today is share-level: if one share is locked, slow
@@ -49,10 +56,8 @@ DEFAULT_HUB = r"\\fileserver\share\_omp"
 # people's projects). A second root in our own share still covers the realistic
 # failures: the tree deleted or ACL-locked by accident, or one folder filling up.
 # When IT ever gives us a second server, append its UNC here - nothing else changes.
-DEFAULT_MIRRORS = [
-    r"\\fileserver\share\_omp",
-    r"\\fileserver-mirror\share\_omp",
-]
+# Optional second root (a mirror share): same rule - supplied by the user, not hardcoded.
+DEFAULT_MIRRORS: list[str] = []
 
 HUB_ENV = "OMP_REMOTE_HUB"
 
@@ -406,7 +411,7 @@ class Hub:
 
     def check(self) -> None:
         if not os.path.isdir(self.root):
-            die(f"hub not reachable: {self.root}  (need the factory network / \\\\192.0.2.10)")
+            die(f"hub not reachable: {self.root}  - check the path and that this box can reach the share")
 
     def ensure_root(self) -> None:
         """Create the hub tree if the share itself is reachable (first-run bootstrap)."""
@@ -2017,9 +2022,25 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def require_hub(cli_value: str | None) -> str:
+    """Return the hub root or stop with an instruction the operator/agent can act on."""
+    root = (cli_value or "").strip() or hub_env() or ""
+    if not root:
+        die(
+            "no hub configured.\n"
+            "Ask the user for the share path their machines can already write\n"
+            "(a UNC such as \\\\server\\share\\_omp, or a mounted path), then either:\n"
+            "  python src/ompremote.py --hub \'\\\\server\\share\\_omp\' machines\n"
+            "  set OMP_REMOTE_HUB=//server/share/_omp\n"
+            "  export OMP_REMOTE_HUB=//server/share/_omp\n"
+            "Nothing is hardcoded here on purpose: the path is site specific."
+        )
+    return root
+
+
 def main() -> None:
     args = build_parser().parse_args()
-    hub = Hub(hub_env() or args.hub or DEFAULT_HUB)
+    hub = Hub(require_hub(args.hub))
     hub.mirrors = [m for m in DEFAULT_MIRRORS if m.rstrip("\\/") != hub.root]
     args.func(hub, args)
 

@@ -14,6 +14,16 @@ internet**, but do have one writable file share.
 No broker, no tunnel, no relay, no process injection, no driver. Files in, files out, with
 authenticated encryption in between.
 
+
+## Before you start: you need the share path
+
+This repository contains **no share path, no hostnames, no keys** — they are site specific and a
+wrong guess writes somewhere else. Ask the user for the UNC of the folder their machines can
+already write (e.g. `\\server\share\_omp`), then pass `--hub` or set `OMP_REMOTE_HUB`.
+Running without one stops with an explanation; that is the program asking you the same question.
+
+Details: [docs/quickstart.md](docs/quickstart.md).
+
 ## Why
 
 Factory/office machines often reach exactly one thing: a file server. What such a channel needs is

@@ -35,6 +35,11 @@ First public release. Everything below has been running against a real fleet bef
   denials; an operator token with no `machines` can reach nothing.
 - Owner-only: key material, machine allowlist, and the fleet-wide pause (`policy/disabled.txt`).
 
+### Configuration
+- The repository ships **no share path and no hostnames**. `src/ompremote.py` stops with an
+  instruction ("no hub configured") and tells the operator/agent to ask the user for the UNC;
+  `--hub` and `OMP_REMOTE_HUB` are the two ways to supply it. `docs/quickstart.md` covers this.
+
 ### Docs
 - `docs/protocol.md`, `docs/key-management.md`, `docs/licensing.md`.
 - `skills/`: six reusable operating manuals (operator access, crypto, key migration, self-healing,
