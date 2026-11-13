@@ -47,6 +47,20 @@
 - **不改终端安全**：不动杀软/EDR 配置、不写白名单、不注入、不装驱动；
 - 没有云端依赖，没有遥测。
 
+## Skills（可复用手册）
+
+每个目录一份：`README.md` 给人看（这份做什么、什么时候用），`SKILL.md` 给 agent 执行。
+索引：[skills/README.md](skills/README.md)。
+
+| Skill | 内容 |
+|---|---|
+| [operator-access](skills/ompremote-operator-access/README.md) | 每人一个 token：机台范围、可下发类型、到期、审计 |
+| [share-channel-crypto](skills/ompremote-share-channel-crypto/README.md) | 该加密什么、什么必须保持可读、密钥卫生与边界 |
+| [per-machine-key-migration](skills/ompremote-per-machine-key-migration/README.md) | 全队一把钥 → 每机 HKDF seed + DPAPI，含四个坑 |
+| [bridge-selfheal](skills/ompremote-bridge-selfheal/README.md) | 本地心跳、杀卡死进程的看护、双实例互杀 |
+| [sanitized-public-repo-release](skills/sanitized-public-repo-release/README.md) | 内部工具开源前的清洗与检查清单 |
+| [github-license-recognition-and-dual-license](skills/github-license-recognition-and-dual-license/README.md) | GitHub 认哪些许可、AGPL + 商业双许可怎么落 |
+
 ## 快速自测（不需要机台）
 
 ```bash

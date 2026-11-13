@@ -52,6 +52,20 @@ Protocol: [docs/protocol.md](docs/protocol.md). Keys: [docs/key-management.md](d
   injection, no kernel driver.
 - No cloud dependency, no telemetry.
 
+## Skills
+
+Reusable operating manuals, one folder per skill — `README.md` is the human intro,
+`SKILL.md` is what you hand to an agent. Index: [skills/README.md](skills/README.md).
+
+| Skill | What it covers |
+|---|---|
+| [operator-access](skills/ompremote-operator-access/README.md) | per-person tokens: machine scope, allowed job kinds, expiry, audit |
+| [share-channel-crypto](skills/ompremote-share-channel-crypto/README.md) | what to encrypt, what must stay readable, key hygiene and boundaries |
+| [per-machine-key-migration](skills/ompremote-per-machine-key-migration/README.md) | one fleet key → per-machine HKDF seed + DPAPI, and four pitfalls |
+| [bridge-selfheal](skills/ompremote-bridge-selfheal/README.md) | beacon on local disk, watchdog that kills a frozen body, duplicate instances |
+| [sanitized-public-repo-release](skills/sanitized-public-repo-release/README.md) | turning an internal tool into a public repo without leaking anything |
+| [github-license-recognition-and-dual-license](skills/github-license-recognition-and-dual-license/README.md) | which licenses GitHub recognises, and AGPL + commercial dual licensing |
+
 ## Try it
 
 ```bash
