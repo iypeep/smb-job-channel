@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
-# smb-job-channel
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![Commercial license](https://img.shields.io/badge/license-commercial%20available-informational)](NOTICE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776ab)](src/ompremote.py)
+
+**English** · [简体中文](README.zh-CN.md)
+
 
 A small, auditable **job channel that uses an SMB share as its control plane**: the controller
 drops a signed+encrypted job into a folder, an agent on the target machine executes it and writes
