@@ -1,4 +1,5 @@
 {
+  "_license": "AGPL-3.0-or-later",
   "_comment": "Copy to tokens.json (git-ignored). One entry per person/agent. 'machines' and 'kinds' are the grant; an operator token without 'machines' can reach NOTHING. 'expires' is a plain YYYY-MM-DD: the day is still usable, the next day the gateway answers 401.",
   "tokens": [
     {
