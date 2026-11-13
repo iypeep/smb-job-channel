@@ -5,16 +5,12 @@
 
 | Skill | 用途 |
 |---|---|
-| [ompremote-operator-access](ompremote-operator-access/README.md) | 给除机队负责人外的同事/agent 使用共享盘作业通道时的权限模型与操作规矩。 |
-| [ompremote-per-machine-key-migration](ompremote-per-machine-key-migration/README.md) | 把机队从全队一把 PSK 迁到每机 HKDF seed + DPAPI 的实操步骤与四个坑。 |
-| [sanitized-public-repo-release](sanitized-public-repo-release/README.md) | 把带生产数据的内部工具做成可公开仓库的清洗流程与检查清单。 |
-| [github-license-recognition-and-dual-license](github-license-recognition-and-dual-license/README.md) | GitHub 许可证识别范围、许可选型，以及 AGPL + 商业双许可的切换步骤。 |
-| [ompremote-share-channel-crypto](ompremote-share-channel-crypto/README.md) | # 共享盘作业通道：加密与密钥卫生
-
-适用于"控制端往 SMB 共享投作业文件 → 机台执行 → 结果写回共享"这类通道 |
-| [ompremote-bridge-selfheal](ompremote-bridge-selfheal/README.md) | # 自治代理：心跳、看护与自愈
-
-适用于"机台上跑一个轮询代理，靠共享盘收发作业"的场景。真正的事故不是"进程崩了"，而 |
+| [ompremote-operator-access](ompremote-operator-access/README.md) | 机队接入：每人一个 token、机台与作业类型白名单、到期与审计 |
+| [ompremote-per-machine-key-migration](ompremote-per-machine-key-migration/README.md) | 全队一把钥 → 每机 HKDF seed + DPAPI，含四个实测坑 |
+| [sanitized-public-repo-release](sanitized-public-repo-release/README.md) | 内部工具开源前的白名单导出、清洗、残留扫描与回验 |
+| [github-license-recognition-and-dual-license](github-license-recognition-and-dual-license/README.md) | GitHub 认哪些许可、如何做 AGPL + 商业双许可 |
+| [ompremote-share-channel-crypto](ompremote-share-channel-crypto/README.md) | 共享盘通道的加密设计、密钥卫生与运营边界 |
+| [ompremote-bridge-selfheal](ompremote-bridge-selfheal/README.md) | 本地心跳、杀卡死进程的看护、双实例互杀与自愈验证 |
 
 ## 约定
 
