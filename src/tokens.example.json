@@ -1,0 +1,26 @@
+{
+  "_comment": "Copy to tokens.json (git-ignored). One entry per person/agent. 'machines' and 'kinds' are the grant; an operator token without 'machines' can reach NOTHING. 'expires' is a plain YYYY-MM-DD: the day is still usable, the next day the gateway answers 401.",
+  "tokens": [
+    {
+      "token": "admin-CHANGE-ME-0000",
+      "name": "唐博知",
+      "role": "admin",
+      "machines": ["*"],
+      "kinds": ["*"]
+    },
+    {
+      "token": "op-example-1111",
+      "name": "张三",
+      "role": "operator",
+      "machines": ["MACHINE-001", "MACHINE-00X-*"],
+      "kinds": ["ps", "ls", "fetch", "job"],
+      "expires": "2026-12-31"
+    },
+    {
+      "token": "view-example-2222",
+      "name": "李四",
+      "role": "viewer",
+      "machines": ["*"]
+    }
+  ]
+}

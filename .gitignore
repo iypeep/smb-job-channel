@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.tmp
+*.log
+*.key
+*.key.prev
+tokens.json
+audit.jsonl
+*.local.md
+machines/
+runs/
+out/
